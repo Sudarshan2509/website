@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate via UPI – Savitri Jyoti Foundation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container header">
+      <h1 class="logo">Savitri Jyoti Foundation</h1>
+      <nav>
+        <a href="index.html" class="btn secondary">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <h2><i class="fas fa-hand-holding-heart"></i> Donate via UPI</h2>
+      <p style="max-width: 700px; margin: 20px auto;">
+        You can directly support our work by donating using any UPI app. Just scan the QR code below or use our UPI ID.
+      </p>
+
+      <!-- ✅ QR Code Image -->
+      <div style="margin: 30px 0;">
+        <img src="images/qr code.jpeg" alt="UPI QR Code" style="max-width: 300px; width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+      </div>
+
+      <!-- ✅ UPI ID Display -->
+      <div class="upi-box">
+        <p><strong>UPI ID:</strong> <span id="upi-id">7887630615@sbi</span></p>
+        <button class="btn secondary" onclick="copyUPI()">Copy UPI ID</button>
+      </div>
+
+      <p style="margin-top: 30px;">After payment, you can optionally <a href="#confirm" style="text-decoration: underline;">send us confirmation</a> with your name and amount.</p>
+    </div>
+  </section>
+
+  <section class="section alt-bg" id="confirm">
+    <div class="container" style="max-width: 500px;">
+      <h3 style="text-align: center;">Payment Confirmation (Optional)</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email (optional)" />
+        <input type="number" placeholder="Amount Donated (₹)" required />
+        <textarea placeholder="Message (optional)"></textarea>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer">
+      <p>© 2025 Savitri Jyoti Foundation | Pune</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyUPI() {
+      const upiId = document.getElementById("upi-id").innerText;
+      navigator.clipboard.writeText(upiId).then(() => {
+        alert("UPI ID copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
